@@ -1,0 +1,71 @@
+.team {
+	background-color: #f5f4fa;
+
+	&__list {
+		@extend %flex-wrap;
+		justify-content: center;
+	}
+}
+
+.social {
+	@extend %flex-wrap;
+	justify-content: center;
+}
+
+.social__item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.social__link--white {
+	@include social($icon-color);
+}
+
+.social__link:active,
+.social__link:hover,
+.social__link:focus {
+	background-color: $icon-hover-backgr-color;
+	fill: $second-text-color;
+}
+
+.person {
+	padding-bottom: 30px;
+	margin: 0 auto 0;
+	min-width: 270px;
+	background-color: $second-text-color;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 0px 0px 4px 4px;
+
+
+	&__title {
+		margin: 30px 0 10px 0;
+		color: $primary-text-color;
+		font-weight: $weidth-medium;
+		font-size: $size-medium;
+		line-height: 1.19;
+		text-align: center;
+	}
+
+	&__position {
+		margin-bottom: 16px;
+
+		font-size: $size-medium;
+		line-height: 1.19;
+		text-align: center;
+	}
+}
+.team__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+.person {
+	flex-basis: 100%;
+
+	@include tablet {
+		flex-basis: calc((100% - 30px) / 2);
+	}
+
+	@include desktop {
+		flex-basis: calc((100% - 90px) / 4);
+	}
+}

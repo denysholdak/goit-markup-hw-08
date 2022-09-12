@@ -1,0 +1,150 @@
+.footer {
+	background-color: $second-background-color;
+	padding: 60px 0;
+
+	&__container {
+		@media screen and (max-width: 1199px) {
+			text-align: center;
+		}
+
+		@include tablet {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		@include desktop {
+			align-items: baseline;
+			justify-content: flex-start;
+		}
+	}
+
+	.adress-footer {
+		@include desktop {
+			margin: 0 70px 0 0;
+		}
+	}
+}
+
+@import "../layouts/logo";
+
+.logo__txt--white {
+	@include logo($second-text-color);
+}
+
+.address {
+	margin-top: 20px;
+}
+
+.address__item:not(:last-child) {
+	margin-bottom: 8px;
+
+	@include desktop {
+		margin-bottom: 9px;
+	}
+}
+
+.adress__link {
+	@include adress-link($second-text-color);
+
+	&--grey {
+		@include adress-link($color-transparency-06);
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $accent-text-color;
+	}
+}
+
+.join {
+	@media screen and (max-width: 767px) {
+		margin: 60px 0;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		margin: 0 0 0 165px;
+	}
+}
+
+.subtitle {
+	display: block;
+	margin-bottom: 20px;
+
+	line-height: 1.14;
+	text-transform: uppercase;
+	color: $second-text-color;
+	font-weight: $weidth-bold;
+}
+
+.social__item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.social__link--grey {
+	@include social($second-text-color, rgba(255, 255, 255, 0.1));
+}
+
+.email {
+	
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		margin: 60px auto 0;
+	}
+
+	@include desktop {
+		margin: 0 0 0 93px;
+		flex-direction: column;
+	}
+
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+
+		@include desktop {
+			flex-direction: row;
+		}
+	}
+}
+
+.email {
+	&__input {
+		padding: 15px 16px;
+		margin-bottom: 20px;
+
+		width: 100%;
+		height: 50px;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+		border-radius: 4px;
+		color: transparent;
+
+		font-size: $size-medium;
+		line-height: 1.25;
+		color: $color-transparency-06;
+		background-color: transparent;
+
+		@include tablet {
+			width: 450px;
+		}
+
+		@include desktop {
+			width: 358px;
+			margin-right: 12px;
+		}
+	}
+}
+.button {
+	@extend %button;
+}
+.button--img::after {
+	content: "";
+	margin-left: 10px;
+	width: 24px;
+	height: 24px;
+	background-image: url("../images/icon-send.svg");
+	background-size: contein;
+}

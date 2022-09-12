@@ -1,0 +1,39 @@
+.clients__list {
+	display: flex;
+	flex-wrap: wrap;
+	
+	gap: 30px;
+}
+.clients__item {
+width: calc((100% - 30px) / 2);
+
+@include tablet {
+	width: calc((100% - 60px) / 3);
+}
+@include desktop {
+justify-content: center;
+	width: 170px;
+}
+}
+
+.clients__link {
+	@include transitiontwo(border, fill);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 92px;
+	border: 1px solid $icon-color;
+	border-radius: 4px;
+	fill: $icon-color;
+	cursor: pointer;
+
+	
+
+	&:active,
+	&:hover,
+	&:focus {
+		border: 1px solid $icon-hover-backgr-color;
+		fill: $icon-hover-backgr-color;
+	}
+}

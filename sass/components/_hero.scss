@@ -1,0 +1,77 @@
+.hero {
+
+
+	text-align: center;
+
+	background-color: #c4c4c4;
+	background-image: linear-gradient(to right rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-mobile.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin: 0 auto;
+	
+
+	&__container {
+		padding: 118px 0;
+
+		@include desktop {
+			padding: 200px 0;
+		}
+	}
+	@media screen and (min-device-pixel-ratio: 2),
+		screen and (min-resolution: 192dpi),
+		screen and (min-resolution: 2dppx) {
+		background-image: linear-gradient(to right rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-mobile@2x.jpg);
+	}
+
+	@include tablet {
+		background-image: linear-gradient(to right rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
+		background-size: 768px 400px;
+	}
+
+	@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+		screen and (min-resolution: 192dpi) and (min-width: 768px),
+		screen and (min-resolution: 2dppx) and (min-width: 768px) {
+		background-image: linear-gradient(to right rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero@2x.jpg);
+	}
+
+	@include desktop {
+		background-image: linear-gradient(to right rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-desktop.jpg);
+		background-size: 1600px 600px;
+	}
+
+	@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
+		screen and (min-resolution: 192dpi) and (min-width: 1200px),
+		screen and (min-resolution: 2dppx) and (min-width: 1200px) {
+		background-image: linear-gradient(to right rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-desktop@2x.jpg);
+	}
+
+	&__title {
+		margin: auto;
+		margin-bottom: $margin-block;
+		color: $second-text-color;
+		font-weight: $weidth-black;
+		font-size: $size-logo;
+		line-height: 1.62;
+		letter-spacing: $spacing-big;
+		text-transform: uppercase;
+
+		@include tablet {
+		
+			width: 360px;
+		}
+
+		@include desktop {
+			font-size: $size-title;
+			line-height: 1.36;
+			width: 696px;
+		}
+	}
+}
+
+.button {
+	@extend %button;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+@import "../layouts/modal";
